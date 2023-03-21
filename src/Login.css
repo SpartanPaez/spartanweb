@@ -4,7 +4,7 @@ body { margin: 0; padding: 0; }
 h1,h2,h3,h4,h5,h6,p { margin: 0; }
 
 
-.App {
+.laura {
   display: grid;
   grid-template-columns: 1fr minmax(200px,400px) 1fr;
   grid-template-rows: 1fr minmax(auto,1fr) 1fr;
