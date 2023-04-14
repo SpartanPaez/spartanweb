@@ -1,13 +1,12 @@
-import { Link, withRouter, Route } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { useState } from 'react';
-import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import './Login.css'
-import Dashboard from "./Dashboard";
 
-const logg = () => logg
-const userExists = false;
+
+
 export const Login = () => {
+    const navigate = useNavigate();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
@@ -24,19 +23,17 @@ export const Login = () => {
             }
         })
             .then(response => {
-                debugger;
-                console.log(response.data);
                 const userExists = response.data;
                 if (userExists) {
-                    return <Dashboard />
+                    navigate('/dashboard');
                 }
                 else {
                     console.log(response.data);
                 }
             })
             .then(data => console.log(data))
-            .catch(error => console.log(error));
     };
+
 
     return (
         <div className="laura">
@@ -69,6 +66,7 @@ export const Login = () => {
                 </fieldset>
                 <button type="submit" id="btningresar"><Link to='/'></Link>Ingresar</button>
                 <button type="button"><Link to='/HomePage'></Link>Contacto</button>
+               
             </form>
         </div>
     )

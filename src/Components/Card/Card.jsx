@@ -8,10 +8,7 @@ import Chart from 'react-apexcharts'
 
 
 const Card = (props) => {
-  debugger;
   const [expanded, setExpanded] = useState(false);
-  console.log(setExpanded);
-  console.log(expanded);
   
   return (
     <LayoutGroup>

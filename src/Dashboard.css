@@ -3,9 +3,9 @@
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   background: linear-gradient(106.37deg,
-      #9371b3ec 29.63%,
-      #9338ad 51.55%,
-      #b7a7a7 90.85%);
+      #391957ec 29.63%,
+      #542761 51.55%,
+      #380f64 90.85%);
   height: 100vh;
   display: flex;
   align-items: center;
@@ -18,7 +18,7 @@
   height: 97%;
   width: 97%;
   border-radius: 2rem;
-  background-color: rgba(255, 255, 255, 0.414);
+  background-color: rgba(255, 255, 255, 0.289);
   /*rgba(255, 255, 255, 0.407); /* color de fondo*/
   gap: 10px;
   overflow: hidden;

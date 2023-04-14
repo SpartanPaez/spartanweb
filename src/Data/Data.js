@@ -18,7 +18,9 @@ export const SidebarData = [
     {
         icon: UilClipboardAlt,
         title: 'Clientes',
-        link: '/orders',
+        link: '/clientes',
+        open:'showClientesModal',
+        modal: 'ClientesModal'
     },
     {
         icon: UilUsersAlt,
@@ -28,7 +30,7 @@ export const SidebarData = [
     {
         icon: UilPackage,
         title: 'Productos',
-        link: '/products',
+        link: '/productos',
     },
     {
         icon: UilChart,
@@ -86,4 +88,23 @@ export const cardsData = [
             }
         ]
     }
+]
+export const cardsclientSet = [
+    {
+        title: 'Alta de clientes ',
+        color:{
+            background: "linear-gradient(180deg, rgba(55, 27, 81, 0.879) 20%, rgba(255, 255, 255, 0.1) 100%), #6543a4",
+            boxShadow: "0px 19px 60px rgb(0 0 0 / 8%)",
+        },
+        value: "89",
+        png: UilUsersAlt,
+        series:[
+            {
+                name: "Ventas",
+                data: [20, 50, 60, 72, 80, 90, 120, 12, 69, 87],
+            }
+        ],
+        link: '/clientes'
+    },
+   
 ]

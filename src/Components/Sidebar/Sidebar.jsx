@@ -5,8 +5,25 @@ import { SidebarData } from '../../Data/Data'
 import { UilSignOutAlt } from '@iconscout/react-unicons'
 import { UilBars } from "@iconscout/react-unicons";
 import { motion } from "framer-motion";
+import ClientesModal from '../Clientes/Clientes';
+import PanelClientesModal from '../Clientes/panelClientes';
+import PanelProductosModal from '../Productos/ProductoPanel';
+import { Link } from 'react-router-dom';
+
 
 const Sidebar = () => {
+    const [showClientesModal, setShowClientesModal] = useState(false);
+
+
+    const handleModalOpen = () => {
+        setShowClientesModal(true);
+    };
+
+    const handleModalClose = () => {
+        setShowClientesModal(false);
+    };
+
+
     const [selected, setSelected] = useState(0);
 
     const [expanded, setExpaned] = useState(true)
@@ -21,7 +38,7 @@ const Sidebar = () => {
     }
 
     return (
-    
+
         <motion.div className="Sidebar"
             variants={sidebarVariants}
             animate={window.innerWidth <= 768 ? `${expanded}` : ''}
@@ -36,20 +53,24 @@ const Sidebar = () => {
 
             {/*El menu va acá*/}
             <div className="menu">
-                {SidebarData.map((item, index) => {
-                    return (
-                        <div className={selected === index ? "menuItem active" : "menuItem"}
-                            key={index}
-                            onClick={() => setSelected(index)}
-                        >
-                            <item.icon />
-                            <span>{item.title}</span>
-                        </div>
-                    )
-                })}
+                {/* Botón 1 */}
+                <div className={selected === 0 ? "menuItem active" : "menuItem"} onClick={() => setSelected(0)}>
+                    <PanelClientesModal className={selected === 0 ? "menuItem active" : "menuItem"} open={showClientesModal} handleClose={handleModalClose} />
+                </div>
+
+                {/* Botón 2 */}
+                <div className={selected === 1 ? "menuItem active" : "menuItem"} onClick={() => setSelected(1)}>
+                    <PanelProductosModal className={selected === 1 ? "menuItem active" : "menuItem"} open={showClientesModal} handleClose={handleModalClose} />
+                </div>
+
+                {/* Botón 3 */}
+                <div className={selected === 2 ? "menuItem active" : "menuItem"} onClick={() => setSelected(2)}>
+               {/* <ClientesModal className={selected === 2 ? "menuItem active" : "menuItem"} open={showClientesModal} handleClose={handleModalClose} />*/}
+                </div>
                 <div className="menuItem">
                     <UilSignOutAlt />
                 </div>
+
             </div>
         </motion.div>
     )

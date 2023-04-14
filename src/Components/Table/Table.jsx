@@ -6,53 +6,76 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import axios from 'axios';
+import { v4 as uuidv4 } from 'uuid';
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
 
-const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
+export const TableX = () => {
+  const [data, setData] = React.useState([]);
 
-export default function BasicTable() {
-  return (
+  const [productofechacencimiento, setProductofechacencimiento] = React.useState("");
+  const handleSubmit = (evento) => {
+    debugger
+    const request = {
+      ProductoFechaVencimiento: productofechacencimiento
+    };
+    axios.get(`http://localhost:5305/api/productos`, request, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(response => {
+        const ExistenResultados = response.data;
+        debugger
+        if (ExistenResultados) {
+          setData(ExistenResultados)
+        }
+      })
+  }
+  React.useEffect(() => {
+    handleSubmit();
+  }, []);
+
+
+  return (console.log(data),
     <div className="Table">
-        <h3>Productos a vencer</h3>
-        <br />
-    <TableContainer component={Paper} style={{boxShadow:'0px 13px 20px 0px #80808029'}}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell>Nombre del Producto</TableCell>
-            <TableCell align="right">Cantidad</TableCell>
-            <TableCell align="right">Vencimiento</TableCell>
-            <TableCell align="right">Costo</TableCell>
-            <TableCell align="right">Ubicación</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow
-              key={row.name}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-            >
-              <TableCell component="th" scope="row">
-                {row.name}
-              </TableCell>
-              <TableCell align="right">{row.calories}</TableCell>
-              <TableCell align="right">{row.fat}</TableCell>
-              <TableCell align="right">{row.carbs}</TableCell>
-              <TableCell align="right">{row.protein}</TableCell>
+      <h3>Productos a vencer</h3>
+      <br />
+      <TableContainer component={Paper} style={{ boxShadow: '0px 13px 20px 0px #80808029', maxHeight: '400px', overflow: 'auto' }}>
+        <Table stickyHeader sx={{ minWidth: 650, maxWidth: "max-content" }} aria-label="sticky table">
+          <TableHead>
+            <TableRow>
+              <TableCell align="left" style={{ position: 'sticky', left: 0, zIndex: 1 }}></TableCell>
+              <TableCell align="left" style={{ position: 'sticky', left: 0, zIndex: 1 }}>Codigo</TableCell>
+              <TableCell align='left' style={{ position: 'sticky', left: 0, zIndex: 1 }}>Producto</TableCell>
+              <TableCell align="left" style={{ position: 'sticky', left: 0, zIndex: 1 }}>Cantidad</TableCell>
+              <TableCell align="left" style={{ position: 'sticky', left: 0, zIndex: 1 }}>Vencimiento</TableCell>
+              <TableCell align="left" style={{ position: 'sticky', left: 0, zIndex: 1 }}>Costo</TableCell>
+              <TableCell align="left" style={{ position: 'sticky', left: 0, zIndex: 1 }}>Ubicación</TableCell>
+
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+          </TableHead>
+          <TableBody>
+            {data.map((row) => (
+              <TableRow
+                key={uuidv4()}
+                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+              >
+                <TableCell component="th" scope="row">
+                  {row.ProductoNombre}
+                </TableCell>
+                <TableCell align="left">{row.productoCodigoBarra}</TableCell>
+                <TableCell align="left">{row.productoNombre}</TableCell>
+                <TableCell align="left">{row.productoExistencia}</TableCell>
+                <TableCell align="left">{row.productoFechaVencimiento}</TableCell>
+                <TableCell align="left">{row.productoCosto}</TableCell>
+                <TableCell align="left">{row.depositoId}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
     </div>
   );
 }
+export default TableX;
