@@ -1,0 +1,24 @@
+.Tables {
+    min-width: 650;
+    max-width: max-content;
+    background: rgb(111, 101, 101);
+    color: white;
+}
+.TableContainer {
+    box-shadow: 0px 13px 20px 0px #80808029;
+    max-height: 400px;
+    overflow: auto;
+    z-index: 1;
+    position: relative;
+    background-color: #0E0E0E;
+    
+
+}
+.TableCell {
+    position: fixed;
+    left: 0;
+    z-index: 1;
+    background: #0E0E0E;
+    color: #b5b9b7;
+    background: #80808029;
+}

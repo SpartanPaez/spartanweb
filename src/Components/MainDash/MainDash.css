@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: space-evenly;
     padding: 1rem;
+    z-index: 1;
 }
 @media screen and (max-width: 1200px) {
     .MainDash{

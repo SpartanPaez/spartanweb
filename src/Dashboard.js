@@ -7,10 +7,19 @@ import RightSide from './Components/RightSide/RightSide';
 function Dashboard() {
     return (
         <div className="Dashboard">
+            <span className="regulada"></span>
+            <span className="regulada"></span>
+            <span className="regulada"></span>
+            <span className="regulada"></span>
+            <span className="regulada"></span>
+            <span className="regulada"></span>
+            <span className="regulada"></span>
+            <span className="regulada"></span>
+            <span className="regulada"></span>
             <div className="AppGlass">
-               <Sidebar/>
-               <MainDash/>
-               <RightSide/>
+                <Sidebar />
+                <MainDash />
+                <RightSide />
             </div>
         </div>
     );

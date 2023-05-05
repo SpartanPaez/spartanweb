@@ -2,15 +2,14 @@
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  background: linear-gradient(106.37deg,
-      #391957ec 29.63%,
-      #542761 51.55%,
-      #380f64 90.85%);
+
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'Inter', sans-serif;
+  color: white;
+  background-color: black;
 }
 
 .AppGlass {
@@ -18,7 +17,7 @@
   height: 97%;
   width: 97%;
   border-radius: 2rem;
-  background-color: rgba(255, 255, 255, 0.289);
+  background-color: #292727ac; /* rgba(255, 255, 255, 0.289);
   /*rgba(255, 255, 255, 0.407); /* color de fondo*/
   gap: 10px;
   overflow: hidden;
@@ -39,4 +38,114 @@
   .AppGlass::-webkit-scrollbar{
     display: none;
   }
+}
+@keyframes move {
+  100% {
+      transform: translate3d(0, 0, 1px) rotate(360deg);
+  }
+}
+
+div.Dashboard {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: #090312;
+  overflow: hidden;
+}
+
+div.Dashboard span.regulada {
+  width: 26vmin;
+  height: 26vmin;
+  border-radius: 26vmin;
+  position: absolute;
+  animation: move;
+  animation-duration: 10;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  z-index: 0;
+}
+
+
+div.Dashboard span.regulada:nth-child(0) {
+  color: #442e69b2;
+  top: 40%;
+  left: 55%;
+  animation-duration: 308s;
+  animation-delay: -19s;
+  transform-origin: -5vw 15vh;
+  box-shadow: -52vmin 0 6.601242985416587vmin currentColor;
+}
+div.Dashboard span.regulada:nth-child(1) {
+  color: #442e69;
+  top: 50%;
+  left: 50%;
+  animation-duration: 201s;
+  animation-delay: -239s;
+  transform-origin: 1vw -17vh;
+  box-shadow: 52vmin 0 7.365587888381885vmin currentColor;
+}
+div.Dashboard span.regulada:nth-child(2) {
+  color: #853b22;
+  top: 75%;
+  left: 9%;
+  animation-duration: 309s;
+  animation-delay: -86s;
+  transform-origin: 5vw -17vh;
+  box-shadow: -52vmin 0 6.5000785219166275vmin currentColor;
+}
+div.Dashboard span.regulada:nth-child(3) {
+  color: #442e69;
+  top: 87%;
+  left: 86%;
+  animation-duration: 224s;
+  animation-delay: -182s;
+  transform-origin: 14vw 14vh;
+  box-shadow: 52vmin 0 6.792994534788729vmin currentColor;
+}
+div.Dashboard span.regulada:nth-child(4) {
+  color: #442e69;
+  top: 68%;
+  left: 59%;
+  animation-duration: 45s;
+  animation-delay: -341s;
+  transform-origin: -20vw 14vh;
+  box-shadow: 52vmin 0 7.427979020290883vmin currentColor;
+}
+div.Dashboard span.regulada:nth-child(5) {
+  color: #8c8323;
+  top: 29%;
+  left: 74%;
+  animation-duration: 142s;
+  animation-delay: -336s;
+  transform-origin: -6vw -5vh;
+  box-shadow: -52vmin 0 6.7827567222972815vmin currentColor;
+}
+div.Dashboard span.regulada:nth-child(6) {
+  color: #8c8323;
+  top: 94%;
+  left: 61%;
+  animation-duration: 172s;
+  animation-delay: -208s;
+  transform-origin: -1vw -9vh;
+  box-shadow: 52vmin 0 7.1496314483818395vmin currentColor;
+}
+div.Dashboard span.regulada:nth-child(7) {
+  color: #442e69;
+  top: 35%;
+  left: 19%;
+  animation-duration: 382s;
+  animation-delay: -120s;
+  transform-origin: 14vw 11vh;
+  box-shadow: 52vmin 0 6.840461390861432vmin currentColor;
+}
+div.Dashboard span.regulada:nth-child(8) {
+  color: #442e69;
+  top: 2%;
+  left: 39%;
+  animation-duration: 118s;
+  animation-delay: -205s;
+  transform-origin: -13vw 0vh;
+  box-shadow: -52vmin 0 6.611835640136197vmin currentColor;
 }

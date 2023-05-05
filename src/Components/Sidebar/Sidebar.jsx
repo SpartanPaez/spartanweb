@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import './Sidebar.css'
 import logo from '../../Imgs/logo1.png'
-import { SidebarData } from '../../Data/Data'
 import { UilSignOutAlt } from '@iconscout/react-unicons'
 import { UilBars } from "@iconscout/react-unicons";
 import { motion } from "framer-motion";
-import ClientesModal from '../Clientes/Clientes';
 import PanelClientesModal from '../Clientes/panelClientes';
 import PanelProductosModal from '../Productos/ProductoPanel';
-import { Link } from 'react-router-dom';
+import PanelProveedores from '../Proveedores/PanelProveedores';
 
 
 const Sidebar = () => {
@@ -65,7 +63,7 @@ const Sidebar = () => {
 
                 {/* Botón 3 */}
                 <div className={selected === 2 ? "menuItem active" : "menuItem"} onClick={() => setSelected(2)}>
-               {/* <ClientesModal className={selected === 2 ? "menuItem active" : "menuItem"} open={showClientesModal} handleClose={handleModalClose} />*/}
+                    {<PanelProveedores className={selected === 2 ? "menuItem active" : "menuItem"} open={showClientesModal} handleClose={handleModalClose} />}
                 </div>
                 <div className="menuItem">
                     <UilSignOutAlt />

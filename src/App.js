@@ -7,6 +7,7 @@ import Clientes from './Components/Clientes/Clientes';
 import ClientesLista from './Components/Clientes/clientesLista';
 import PanelClientes from './Components/Clientes/panelClientes';
 import Productos from './Components/Productos/Productos';
+import Proveedores from './Components/Proveedores/ListaProveedores';
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/clientesLista" element={<ClientesLista/>} />
         <Route path="/productos" element={<Productos/>} />
         <Route path="/panelClientes" element={<PanelClientes/>} />
+        <Route path="/proveedoreslista" element={<Proveedores/>} />
       </Routes>
     </BrowserRouter>
   );

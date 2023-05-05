@@ -11,11 +11,30 @@ import { styled } from '@mui/material/styles';
 import { v4 as uuidv4 } from 'uuid';
 import { Modal, TextField, Button } from '@material-ui/core';
 import { UilUsersAlt } from '@iconscout/react-unicons'
-import './ClienteLista.css';
+import styles from './ClienteLista.module.css';
 import Card from './Cardcliente'
 import './Cardsclientes.css'
 import { cardsclientSet } from '../../Data/Data'
 
+const StyledTableCell = styled(TableCell)(({ theme }) => ({
+    [`&.${tableCellClasses.head}`]: {
+        backgroundColor: theme.palette.secondary.dark,
+        color: theme.palette.common.white,
+    },
+    [`&.${tableCellClasses.body}`]: {
+        fontSize: 14,
+    },
+}));
+
+const StyledTableRow = styled(TableRow)(({ theme }) => ({
+    '&:nth-of-type(odd)': {
+        backgroundColor: theme.palette.action.hover,
+    },
+    // hide last border
+    '&:last-child td, &:last-child th': {
+        border: 0,
+    },
+}));
 
 export const TableClientes = () => {
     const [data, setData] = useState([]);
@@ -45,65 +64,66 @@ export const TableClientes = () => {
     };
     return (
         <>
-        {cardsclientSet.map((card, id) => {
-                            return (
-                                <div className="parentContainer" key={id}>
-                                    <Card
-                                        title='Lista de clientes'
-                                        color={card.color}
-                                        barColor={card.barColor}
-                                        barValue={card.value}
-                                        barText={card.barText}
-                                        value={card.value}
-                                        png={card.png}
-                                        series={card.series}
-                                        onClick={handleOpen}
-                                    />
-                                </div>
-                            );
-                        })}
-           
+            {cardsclientSet.map((card, id) => {
+                return (
+                    <div className="parentContainer" key={id}>
+                        <Card
+                            title='Lista de clientes'
+                            color={card.color}
+                            barColor={card.barColor}
+                            barValue={card.value}
+                            barText={card.barText}
+                            value={card.value}
+                            png={card.png}
+                            series={card.series}
+                            onClick={handleOpen}
+                        />
+                    </div>
+                );
+            })}
+
             <Modal open={open} onClose={handleClose}>
-                <div className='modal-content' >
+                <div className={styles.modalcontent} >
                     <div className='table'>
-                        <h2>Clientes regitrados</h2>
+                        <div className={styles.divtitulo}>
+                            <h2>Clientes regitrados</h2>
+                        </div>
+
                         <TableContainer component={Paper} style={{ boxShadow: '0px 13px 20px 0px', overflowX: 'auto' }}>
-                            <Table stickyHeader sx={{ minWidth: 650, maxWidth: "max-content"}} aria-label="customized table">
+                            <Table stickyHeader sx={{ minWidth: 650, maxWidth: "max-content" }} aria-label="customized table">
                                 <TableHead>
                                     <TableRow>
-                                        <TableCell align="left"></TableCell>
-                                        <TableCell align="left">Codigo</TableCell>
-                                        <TableCell align='left'>Cedula</TableCell>
-                                        <TableCell align="left">Nombres y apellidos</TableCell>
-                                        <TableCell align="left">Dirección</TableCell>
-                                        <TableCell align="left">Pais</TableCell>
-                                        <TableCell align="left">Ciudad</TableCell>
-                                        <TableCell align="left">Barrio</TableCell>
-                                        <TableCell align='left'>Producto</TableCell>
-                                        <TableCell align="left">Celular</TableCell>
-                                        <TableCell align="left">Correo</TableCell>
-                                        <TableCell align="left" style={{ whiteSpace: 'nowrap' }}>Estado Civil</TableCell>
+                                        <StyledTableCell align="left"></StyledTableCell>
+                                        <StyledTableCell align="left">Codigo</StyledTableCell>
+                                        <StyledTableCell align='left'>Cedula</StyledTableCell>
+                                        <StyledTableCell align="left">Nombres y apellidos</StyledTableCell>
+                                        <StyledTableCell align="left">Dirección</StyledTableCell>
+                                        <StyledTableCell align="left">Pais</StyledTableCell>
+                                        <StyledTableCell align="left">Ciudad</StyledTableCell>
+                                        <StyledTableCell align="left">Barrio</StyledTableCell>
+                                        <StyledTableCell align="left">Celular</StyledTableCell>
+                                        <StyledTableCell align="left">Correo</StyledTableCell>
+                                        <StyledTableCell align="left" style={{ whiteSpace: 'nowrap' }}>Estado Civil</StyledTableCell>
                                     </TableRow>
                                 </TableHead>
                                 <TableBody>
                                     {data.map((row) => (
-                                        <TableRow
+                                        <StyledTableRow
                                             key={uuidv4()}
                                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                                         >
-                                            <TableCell align="left"></TableCell>
-                                            <TableCell align="left">{row.clienteId}</TableCell>
-                                            <TableCell align="left">{row.clienteCedula}</TableCell>
-                                            <TableCell align="left" style={{ whiteSpace: 'nowrap' }}>{row.clienteNombre}</TableCell>
-                                            <TableCell align="left" style={{ whiteSpace: 'nowrap' }}>{row.clienteDireccion}</TableCell>
-                                            <TableCell align="left">{row.clientePais}</TableCell>
-                                            <TableCell align="left">{row.clienteCiudad}</TableCell>
-                                            <TableCell align="left">{row.clienteBarrio}</TableCell>
-                                            <TableCell align="left">{row.clienteProducto}</TableCell>
-                                            <TableCell align="left">{row.clienteCelular}</TableCell>
-                                            <TableCell align="left">{row.clienteCorreo}</TableCell>
-                                            <TableCell align="left">{row.clienteEstadoCivil}</TableCell>
-                                        </TableRow>
+                                            <StyledTableCell align="left"></StyledTableCell>
+                                            <StyledTableCell align="left">{row.clienteId}</StyledTableCell>
+                                            <StyledTableCell align="left">{row.clienteCedula}</StyledTableCell>
+                                            <StyledTableCell align="left" style={{ whiteSpace: 'nowrap' }}>{row.clienteNombre}</StyledTableCell>
+                                            <StyledTableCell align="left" style={{ whiteSpace: 'nowrap' }}>{row.clienteDireccion}</StyledTableCell>
+                                            <StyledTableCell align="left">{row.clientePais}</StyledTableCell>
+                                            <StyledTableCell align="left">{row.clienteCiudad}</StyledTableCell>
+                                            <StyledTableCell align="left">{row.clienteBarrio}</StyledTableCell>
+                                            <StyledTableCell align="left">{row.clienteCelular}</StyledTableCell>
+                                            <StyledTableCell align="left">{row.clienteCorreo}</StyledTableCell>
+                                            <StyledTableCell align="left">{row.clienteEstadoCivil}</StyledTableCell>
+                                        </StyledTableRow>
                                     ))}
                                 </TableBody>
                             </Table>

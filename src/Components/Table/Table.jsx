@@ -8,6 +8,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
+import './Table.css';
 
 
 export const TableX = () => {
@@ -41,17 +42,17 @@ export const TableX = () => {
     <div className="Table">
       <h3>Productos a vencer</h3>
       <br />
-      <TableContainer component={Paper} style={{ boxShadow: '0px 13px 20px 0px #80808029', maxHeight: '400px', overflow: 'auto' }}>
+      <TableContainer component={Paper} className='TableContainer' style={{ boxShadow: '0px 13px 20px 0px #80808029', maxHeight: '400px', overflow: 'auto', background: '#0E0E0E', zIndex: 1, position: 'relative' }}>
         <Table stickyHeader sx={{ minWidth: 650, maxWidth: "max-content" }} aria-label="sticky table">
           <TableHead>
             <TableRow>
-              <TableCell align="left" style={{ position: 'sticky', left: 0, zIndex: 1 }}></TableCell>
-              <TableCell align="left" style={{ position: 'sticky', left: 0, zIndex: 1 }}>Codigo</TableCell>
-              <TableCell align='left' style={{ position: 'sticky', left: 0, zIndex: 1 }}>Producto</TableCell>
-              <TableCell align="left" style={{ position: 'sticky', left: 0, zIndex: 1 }}>Cantidad</TableCell>
-              <TableCell align="left" style={{ position: 'sticky', left: 0, zIndex: 1 }}>Vencimiento</TableCell>
-              <TableCell align="left" style={{ position: 'sticky', left: 0, zIndex: 1 }}>Costo</TableCell>
-              <TableCell align="left" style={{ position: 'sticky', left: 0, zIndex: 1 }}>Ubicación</TableCell>
+              <TableCell align="left" style={{ position: 'sticky', left: 0, zIndex: 1, background: '#0E0E0E', color: '#b5b9b7' }}></TableCell>
+              <TableCell align="left" style={{ position: 'sticky', left: 0, zIndex: 1, background: '#0E0E0E', color: '#b5b9b7' }}>Codigo</TableCell>
+              <TableCell align='left' style={{ position: 'sticky', left: 0, zIndex: 1, background: '#0E0E0E', color: '#b5b9b7' }}>Producto</TableCell>
+              <TableCell align="left" style={{ position: 'sticky', left: 0, zIndex: 1, background: '#0E0E0E', color: '#b5b9b7' }}>Cantidad</TableCell>
+              <TableCell align="left" style={{ position: 'sticky', left: 0, zIndex: 1, background: '#0E0E0E', color: '#b5b9b7' }}>Vencimiento</TableCell>
+              <TableCell align="left" style={{ position: 'sticky', left: 0, zIndex: 1, background: '#0E0E0E', color: '#b5b9b7' }}>Costo</TableCell>
+              <TableCell align="left" style={{ position: 'sticky', left: 0, zIndex: 1, background: '#0E0E0E', color: '#b5b9b7' }}>Ubicación</TableCell>
 
             </TableRow>
           </TableHead>
@@ -64,12 +65,12 @@ export const TableX = () => {
                 <TableCell component="th" scope="row">
                   {row.ProductoNombre}
                 </TableCell>
-                <TableCell align="left">{row.productoCodigoBarra}</TableCell>
-                <TableCell align="left">{row.productoNombre}</TableCell>
-                <TableCell align="left">{row.productoExistencia}</TableCell>
-                <TableCell align="left">{row.productoFechaVencimiento}</TableCell>
-                <TableCell align="left">{row.productoCosto}</TableCell>
-                <TableCell align="left">{row.depositoId}</TableCell>
+                <TableCell align="left" style={{ color: '#b5b9b7', background: '#0E0E0E' }}>{row.productoCodigoBarra}</TableCell>
+                <TableCell align="left" style={{ color: '#b5b9b7', background: '#0E0E0E' }}>{row.productoNombre}</TableCell>
+                <TableCell align="left" style={{ color: '#b5b9b7', background: '#0E0E0E' }}>{row.productoExistencia}</TableCell>
+                <TableCell align="left" style={{ color: '#b5b9b7', background: '#0E0E0E' }}>{row.productoFechaVencimiento}</TableCell>
+                <TableCell align="left" style={{ color: '#b5b9b7', background: '#0E0E0E' }}>{row.productoCosto}</TableCell>
+                <TableCell align="left" style={{ color: '#b5b9b7', background: '#0E0E0E' }}>{row.depositoId}</TableCell>
               </TableRow>
             ))}
           </TableBody>

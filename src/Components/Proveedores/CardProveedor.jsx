@@ -1,7 +1,8 @@
-import React, { useState  } from "react"
+import React, { useState, useEffect  } from "react"
 import { LayoutGroup, motion } from 'framer-motion'
 import "react-circular-progressbar/dist/styles.css"
-import './Cardcliente.css'
+import './CardProveedor.css'
+import { UilTimes } from '@iconscout/react-unicons'
 
 
 const Card = (props) => {

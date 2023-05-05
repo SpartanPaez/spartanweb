@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Modal, TextField, Button } from '@material-ui/core';
-import { UilUsersAlt } from '@iconscout/react-unicons'
 import { Grid, MenuItem, Select } from '@mui/material';
-import './Cliente.css';
+import style from './Cliente.module.css';
 import axios from 'axios';
 import Card from './Cardcliente'
 import './Cardsclientes.css'
@@ -122,14 +121,14 @@ const CustomerFormModal = (props) => {
                             );
                         })}
             <Modal open={open} onClose={handleClose}>
-                <div className='modal-content' >
-                    <div className='divtitulo'>
+                <div className={style.modalcontent} >
+                    <div className={style.divtitulo}>
                         <h2>Alta de Cliente</h2>
                     </div>
                     <form onSubmit={handleSubmit}>
                         <Grid container spacing={3}>
                             <Grid container item xs={12}>
-                                <Grid item xs={2} className='textField-grid' >
+                                <Grid item xs={2} className={style.textFieldgrid} >
                                     <TextField
                                         variant="filled"
                                         required
@@ -140,7 +139,7 @@ const CustomerFormModal = (props) => {
                                         className='TextField'
                                     />
                                 </Grid>
-                                <Grid item xs={4} className='textField-grid'>
+                                <Grid item xs={4} className={style.textFieldgrid}>
                                     <TextField label="Nombre y Apellido"
                                         variant="filled"
                                         required
@@ -149,7 +148,7 @@ const CustomerFormModal = (props) => {
                                         defaultDefaultValue={clienteNombre}
                                         onChange={handleNombresChange} />
                                 </Grid>
-                                <Grid item xs={6} className='textField-grid'>
+                                <Grid item xs={6} className={style.textFieldgrid}>
                                     <TextField label="Dirección"
                                         variant="filled"
                                         required className='TextField'
@@ -159,7 +158,7 @@ const CustomerFormModal = (props) => {
                                 </Grid>
                             </Grid>
                             <Grid container item xs={12}>
-                                <Grid item xs={3} className='textField-grid'>
+                                <Grid item xs={3} className={style.textFieldgrid}>
                                     <Select
                                         id="countries-select"
                                         label="País"
@@ -185,7 +184,7 @@ const CustomerFormModal = (props) => {
                                         ))}
                                     </Select>
                                 </Grid>
-                                <Grid item xs={3} className='textField-grid'>
+                                <Grid item xs={3} className={style.textFieldgrid}>
                                     <TextField label="Ciudad"
                                         variant="filled"
                                         required
@@ -194,7 +193,7 @@ const CustomerFormModal = (props) => {
                                         defaultvalue={clienteCiudad}
                                         onChange={handleCiudadChange} />
                                 </Grid>
-                                <Grid item xs={3} className='textField-grid'>
+                                <Grid item xs={3} className={style.textFieldgrid}>
                                     <TextField label="Barrio"
                                         variant="filled"
                                         required
@@ -203,7 +202,7 @@ const CustomerFormModal = (props) => {
                                         defaultvalue={clienteBarrio}
                                         onChange={handleBarrioChange} />
                                 </Grid>
-                                <Grid item xs={3} className='textField-grid'>
+                                <Grid item xs={3} className={style.textFieldgrid}>
                                     <TextField label="Celular"
                                         variant="filled"
                                         required
@@ -214,7 +213,7 @@ const CustomerFormModal = (props) => {
                                 </Grid>
                             </Grid>
                             <Grid container item xs={12}>
-                                <Grid item xs={6} className='textField-grid'>
+                                <Grid item xs={6} className={style.textFieldgrid}>
                                     <TextField label="Correo"
                                         variant="filled"
                                         required
@@ -223,7 +222,7 @@ const CustomerFormModal = (props) => {
                                         defaultvalue={clienteCorreo}
                                         onChange={handleCorreoChange} />
                                 </Grid>
-                                <Grid item xs={3} className='textField-grid'>
+                                <Grid item xs={3} className={style.textFieldgrid}>
                                     <TextField label="Estado Civil"
                                         variant="filled"
                                         required
@@ -232,7 +231,7 @@ const CustomerFormModal = (props) => {
                                         defaultvalue={clienteEstadoCivil}
                                         onChange={handleEstadocivilChange} />
                                 </Grid>
-                                <Grid item xs={3} className='textField-grid'>
+                                <Grid item xs={3} className={style.textFieldgrid}>
                                     <TextField label="Estado"
                                         variant="filled"
                                         required className='TextField'
@@ -244,10 +243,10 @@ const CustomerFormModal = (props) => {
                         </Grid>
                         <Grid>
                             <Grid container item xs={7}>
-                                <Grid item xs={3} className='textField-grid'>
-                                    <Button type="submit" onClick={handleSubmit} variant="contained" id='btn'>Guardar</Button>
+                                <Grid item xs={3} className={style.textFieldgrid}>
+                                    <Button type="submit" onClick={handleSubmit} variant="contained" id='btn' className={style.btn}>Guardar</Button>
                                 </Grid>
-                                <Grid item xs={2} className='textField-grid'>
+                                <Grid item xs={2} className={style.textFieldgrid}>
                                     <Button type="submit" variant="contained" id='btn'>Cancelar</Button>
                                 </Grid>
                             </Grid>
