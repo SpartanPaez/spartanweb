@@ -1,7 +1,6 @@
 import React from 'react'
 import axios from 'axios';
-import { Grid, Modal, TextField, Button, } from '@material-ui/core';
-import { DateTimePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
+import { Grid, Modal, TextField, Button, } from '@mui/material';
 import { cardsproductSet } from '../../Data/Data'
 import Card from "./CardProducto";
 import styles from './Producto.module.css';
@@ -209,14 +208,7 @@ const ModalProductos = () => {
                     onChange={handledepositoId} />
                 </Grid>
                 <Grid item xs={3} className={styles.textFieldgrid}>
-                <MuiPickersUtilsProvider>
-                <DateTimePicker label="Vencimiento"
-                    variant="filled"
-                    required
-                    fullWidth={true}
-                    defaultvalue={depositoId}
-                    onChange={handledepositoId} />
-                  </MuiPickersUtilsProvider>
+                
                 </Grid>
 
               </Grid>

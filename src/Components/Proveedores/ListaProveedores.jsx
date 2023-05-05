@@ -8,7 +8,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
-import { Grid, Modal, TextField, Button, } from '@material-ui/core';
+import { Modal } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { cardsproveedoristSet } from '../../Data/Data'
 import Card from './CardProveedor'

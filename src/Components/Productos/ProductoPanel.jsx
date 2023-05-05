@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { Modal, Button } from "@material-ui/core";
+import { useState } from "react";
+import { Modal, Button } from "@mui/material";
 import { UilBox } from "@iconscout/react-unicons";
 import ProductosAltaModal from "./Productos";
 import ProductosListaModal from "./ProductoLista"

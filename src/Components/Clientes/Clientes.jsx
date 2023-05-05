@@ -1,5 +1,9 @@
 import { useState, useEffect } from 'react';
-import { Modal, TextField, Button } from '@material-ui/core';
+import Button  from '@mui/material/Button';
+import Modal  from '@mui/material/Modal';
+import  TextField  from '@mui/material/TextField';
+
+
 import { Grid, MenuItem, Select } from '@mui/material';
 import style from './Cliente.module.css';
 import axios from 'axios';

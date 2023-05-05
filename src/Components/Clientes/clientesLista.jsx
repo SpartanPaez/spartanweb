@@ -9,8 +9,7 @@ import Paper from '@mui/material/Paper';
 import axios from 'axios';
 import { styled } from '@mui/material/styles';
 import { v4 as uuidv4 } from 'uuid';
-import { Modal, TextField, Button } from '@material-ui/core';
-import { UilUsersAlt } from '@iconscout/react-unicons'
+import { Modal } from '@mui/material';
 import styles from './ClienteLista.module.css';
 import Card from './Cardcliente'
 import './Cardsclientes.css'

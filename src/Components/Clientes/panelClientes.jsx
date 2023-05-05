@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { Modal, TextField, Button } from '@material-ui/core';
+import { useState } from 'react';
+import { Modal, Button } from '@mui/material';
 import { UilUsersAlt } from '@iconscout/react-unicons'
 import ClientesModal from '../Clientes/Clientes';
 import ListaClientes from '../Clientes/clientesLista';
