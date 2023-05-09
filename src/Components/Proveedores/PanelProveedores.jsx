@@ -2,6 +2,7 @@ import { Button, Fab, Modal } from '@mui/material';
 import React, { useState } from 'react'
 import styles from './PanelProveedores.module.css'
 import ListaProveedores from './ListaProveedores';
+import Proveedores from './Proveedores';
 import Card from './CardProveedor';
 import { UilHouseUser, UilFolderCheck } from '@iconscout/react-unicons'
 
@@ -30,6 +31,7 @@ const PanelProveedores = () => {
                         <h2>Gestión de proveedores</h2>
                     </div>
                     <div className="Cards">
+                        <Proveedores open={showProveedoresModal} handleClose={handleModalClose} />
                         <ListaProveedores open={showProveedoresModal} handleClose={handleModalClose} />
                     </div>
                 </div>
