@@ -5,9 +5,7 @@ import{
     UilUsersAlt,
     UilPackage,
     UilChart,
-    UilSignOutAlt,
     UilUsdSquare, 
-    UilListUl,
     UilListOlAlt
 } from '@iconscout/react-unicons';  
 
@@ -174,14 +172,7 @@ export const cardsproveedorSet = [
             background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
             boxShadow: "0px 19px 60px rgb(0 0 0 / 8%)",
         },
-        value: "89",
         png: UilListOlAlt,
-        series:[
-            {
-                name: "Ventas",
-                data: [20, 50, 60, 72, 80, 90, 120, 12, 69, 87],
-            }
-        ],
         link: '/clientes'
     },
    

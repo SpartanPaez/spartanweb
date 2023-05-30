@@ -39,7 +39,7 @@ export const Login = () => {
         <div className="laura">
             <form onSubmit={handleSubmit}>
                 <h2>Bienvenido</h2>
-                <fieldset>
+                <fieldset className="fiel">
                     <legend>Acceso</legend>
                     <ul>
                         <li>

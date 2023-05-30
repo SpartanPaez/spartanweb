@@ -11,8 +11,7 @@ import { styled } from '@mui/material/styles';
 import { v4 as uuidv4 } from 'uuid';
 import { Modal } from '@mui/material';
 import styles from './ClienteLista.module.css';
-import Card from './Cardcliente'
-import './Cardsclientes.css'
+import Card from '../Generico/CardGenerico'
 import { cardsclientSet } from '../../Data/Data'
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({

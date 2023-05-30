@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Jura:400');
+/* @import url('https://fonts.googleapis.com/css?family=Jura:400');
 * { font-family: Jura, Arial; font-weight: 400; }
 body { margin: 0; padding: 0; }
 h1,h2,h3,h4,h5,h6,p { margin: 0; }
+ */
 
-
-.App {
+/* .App {
   display: grid;
   grid-template-columns: 1fr minmax(200px,400px) 1fr;
   grid-template-rows: 1fr minmax(auto,1fr) 1fr;
@@ -15,8 +15,8 @@ h1,h2,h3,h4,h5,h6,p { margin: 0; }
   background-size: 400% 400%;
   animation: Gradient 15s ease infinite;
   box-sizing: border-box;
-}
-form {
+} */
+/* form {
     grid-column: 2;
     grid-row: 2;
     display: grid;
@@ -26,8 +26,8 @@ form {
     background-color: rgba(255, 255, 255, 0.57);
     border-radius: 10px;
     box-shadow: 0 32px 64px rgba(0,0,0,0.2);
-}
-   h2 {
+} */
+   /* h2 {
       margin-bottom: 5px;
       text-align: center;
       text-shadow: 0 4px 16px #fff;
@@ -38,15 +38,15 @@ form {
       padding: 5px;
       background-color: #fff;
       border-radius: 5px;
-    }
-    fieldset {
+    } */
+    /* fieldset {
       margin: 0;
       background-color: #fff;
       border: none;
       border-radius: 5px;
       box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-    }
-    ul {
+    } */
+    /* ul {
       margin: 0;
       padding: 0;
 
@@ -131,4 +131,4 @@ form {
   100% {
     background-position: 0% 50%
   }
-}
+} */

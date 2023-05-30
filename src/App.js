@@ -2,7 +2,7 @@ import React from 'react';
 import Dashboard from './Dashboard';
 import './Dashboard.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Login from './Login';
+import Login from './Components/Login/Login';
 import Clientes from './Components/Clientes/Clientes';
 import ClientesLista from './Components/Clientes/clientesLista';
 import PanelClientes from './Components/Clientes/panelClientes';

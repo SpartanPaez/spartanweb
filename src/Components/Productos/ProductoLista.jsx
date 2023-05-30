@@ -10,8 +10,7 @@ import axios from 'axios';
 import { styled } from '@mui/material/styles';
 import { v4 as uuidv4 } from 'uuid';
 import { Modal} from '@mui/material';
-import Card from './CardProducto'
-import './CardProducto'
+import Card from '../Generico/CardGenerico';
 import { cardsproductlistSet } from '../../Data/Data'
 import styles from './ProductoLista.module.css'
 

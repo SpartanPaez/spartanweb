@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import PanelClientesModal from '../Clientes/panelClientes';
 import PanelProductosModal from '../Productos/ProductoPanel';
 import PanelProveedores from '../Proveedores/PanelProveedores';
+import PanelCategorias from '../Categorias/PanelCategoria';
 
 
 const Sidebar = () => {
@@ -64,6 +65,9 @@ const Sidebar = () => {
                 {/* Botón 3 */}
                 <div className={selected === 2 ? "menuItem active" : "menuItem"} onClick={() => setSelected(2)}>
                     {<PanelProveedores className={selected === 2 ? "menuItem active" : "menuItem"} open={showClientesModal} handleClose={handleModalClose} />}
+                </div>
+                <div className={selected === 3 ? "menuItem active" : "menuItem"} onClick={() => setSelected(3)}>
+                    {<PanelCategorias className={selected === 3 ? "menuItem active" : "menuItem"} open={showClientesModal} handleClose={handleModalClose} />}
                 </div>
                 <div className="menuItem">
                     <UilSignOutAlt />

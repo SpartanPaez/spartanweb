@@ -1,12 +1,10 @@
 import React from 'react';
 import axios from 'axios';
-import { Grid, Modal, TextField, Button, } from '@mui/material';
+import {  Modal } from '@mui/material';
 import { cardsproveedorSet } from '../../Data/Data';
-import Card from "./CardProveedor";
+import Card from "../Generico/CardGenerico";
 import styles from './Proveedores.module.css';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const theme = createTheme({
@@ -76,13 +74,8 @@ const ModalProveedores = () => {
                     <div className="parentContainer" key={id}>
                         <Card
                             title={card.title}
-                            color={card.color}
-                            barColor={card.barColor}
-                            barValue={card.barValue}
-                            barText={card.barText}
-                            value={card.value}
+                            color={card.color}x
                             png={card.png}
-                            series={card.series}
                             onclick={handleOpen}
                         />
                     </div>

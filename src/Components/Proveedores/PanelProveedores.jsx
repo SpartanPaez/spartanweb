@@ -1,10 +1,9 @@
-import { Button, Fab, Modal } from '@mui/material';
+import { Button, Modal } from '@mui/material';
 import React, { useState } from 'react'
 import styles from './PanelProveedores.module.css'
 import ListaProveedores from './ListaProveedores';
 import Proveedores from './Proveedores';
-import Card from './CardProveedor';
-import { UilHouseUser, UilFolderCheck } from '@iconscout/react-unicons'
+import {  UilFolderCheck } from '@iconscout/react-unicons'
 
 const PanelProveedores = () => {
     const [open, setOpen] = useState(false);

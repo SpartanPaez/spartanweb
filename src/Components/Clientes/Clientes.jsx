@@ -7,8 +7,7 @@ import  TextField  from '@mui/material/TextField';
 import { Grid, MenuItem, Select } from '@mui/material';
 import style from './Cliente.module.css';
 import axios from 'axios';
-import Card from './Cardcliente'
-import './Cardsclientes.css'
+import Card from '../Generico/CardGenerico';
 import { cardsclientSet } from '../../Data/Data'
 
 const CustomerFormModal = (props) => {
@@ -90,6 +89,7 @@ const CustomerFormModal = (props) => {
         setEstado(event.target.value);
     }
     useEffect(() => {
+        debugger;
         const consultarAPIpais = async () => {
             try {
                 const resultado = await axios.get('http://localhost:5305/api/paises');
