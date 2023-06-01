@@ -8,6 +8,7 @@ import PanelClientesModal from '../Clientes/panelClientes';
 import PanelProductosModal from '../Productos/ProductoPanel';
 import PanelProveedores from '../Proveedores/PanelProveedores';
 import PanelCategorias from '../Categorias/PanelCategoria';
+import PanelVentas from '../Ventas/PanelVentas';
 
 
 const Sidebar = () => {
@@ -37,44 +38,51 @@ const Sidebar = () => {
     }
 
     return (
-
-        <motion.div className="Sidebar"
-            variants={sidebarVariants}
-            animate={window.innerWidth <= 768 ? `${expanded}` : ''}
-        >
-            {/*El logo va acá*/}
-            <div className="logo">
-                <img src={logo} alt="imagen" />
-                <span>
-                    Ini<span>c</span>io
-                </span>
+        <>
+            <div className="bars" style={expanded ? { left: '60%' } : { left: '5%' }} onClick={() => setExpaned(!expanded)}>
+                <UilBars />
             </div>
-
-            {/*El menu va acá*/}
-            <div className="menu">
-                {/* Botón 1 */}
-                <div className={selected === 0 ? "menuItem active" : "menuItem"} onClick={() => setSelected(0)}>
-                    <PanelClientesModal className={selected === 0 ? "menuItem active" : "menuItem"} open={showClientesModal} handleClose={handleModalClose} />
+            <motion.div className='sidebar'
+                variants={sidebarVariants}
+                animate={window.innerWidth <= 768 ? `${expanded}` : ''}
+            >
+                {/*El logo va acá*/}
+                <div className="logo">
+                    <img src={logo} alt="imagen" />
+                    <span>
+                        Ini<span>c</span>io
+                    </span>
                 </div>
 
-                {/* Botón 2 */}
-                <div className={selected === 1 ? "menuItem active" : "menuItem"} onClick={() => setSelected(1)}>
-                    <PanelProductosModal className={selected === 1 ? "menuItem active" : "menuItem"} open={showClientesModal} handleClose={handleModalClose} />
-                </div>
+                {/*El menu va acá*/}
+                <div className="menu">
+                    {/* Botón 1 */}
+                    <div className={selected === 0 ? "menuItem active" : "menuItem"} onClick={() => setSelected(0)}>
+                        <PanelClientesModal className={selected === 0 ? "menuItem active" : "menuItem"} open={showClientesModal} handleClose={handleModalClose} />
+                    </div>
 
-                {/* Botón 3 */}
-                <div className={selected === 2 ? "menuItem active" : "menuItem"} onClick={() => setSelected(2)}>
-                    {<PanelProveedores className={selected === 2 ? "menuItem active" : "menuItem"} open={showClientesModal} handleClose={handleModalClose} />}
-                </div>
-                <div className={selected === 3 ? "menuItem active" : "menuItem"} onClick={() => setSelected(3)}>
-                    {<PanelCategorias className={selected === 3 ? "menuItem active" : "menuItem"} open={showClientesModal} handleClose={handleModalClose} />}
-                </div>
-                <div className="menuItem">
-                    <UilSignOutAlt />
-                </div>
+                    {/* Botón 2 */}
+                    <div className={selected === 1 ? "menuItem active" : "menuItem"} onClick={() => setSelected(1)}>
+                        <PanelProductosModal className={selected === 1 ? "menuItem active" : "menuItem"} open={showClientesModal} handleClose={handleModalClose} />
+                    </div>
 
-            </div>
-        </motion.div>
+                    {/* Botón 3 */}
+                    <div className={selected === 2 ? "menuItem active" : "menuItem"} onClick={() => setSelected(2)}>
+                        {<PanelProveedores className={selected === 2 ? "menuItem active" : "menuItem"} open={showClientesModal} handleClose={handleModalClose} />}
+                    </div>
+                    <div className={selected === 3 ? "menuItem active" : "menuItem"} onClick={() => setSelected(3)}>
+                        {<PanelCategorias className={selected === 3 ? "menuItem active" : "menuItem"} open={showClientesModal} handleClose={handleModalClose} />}
+                    </div>
+                    <div className={selected === 4 ? "menuItem active" : "menuItem"} onClick={() => setSelected(4)}>
+                        {<PanelVentas className={selected === 4 ? "menuItem active" : "menuItem"} open={showClientesModal} handleClose={handleModalClose} />}
+                    </div>
+                    <div className="menuItem">
+                        <UilSignOutAlt />
+                    </div>
+
+                </div>
+            </motion.div>
+        </>
     )
 }
 

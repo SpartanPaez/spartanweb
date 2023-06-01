@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import {  Modal } from '@mui/material';
+import {  Grid, Modal } from '@mui/material';
 import { cardsproveedorSet } from '../../Data/Data';
 import Card from "../Generico/CardGenerico";
 import styles from './Proveedores.module.css';
@@ -87,6 +87,8 @@ const ModalProveedores = () => {
                         <h2>Alta de proveedores</h2>
                     </div>
                     <form onSubmit={handleSubmit}>
+                        
+                          
                     </form>
                 </div>
             </Modal>

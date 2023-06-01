@@ -49,3 +49,9 @@
 .textFieldgrid {
   padding-right: 10px;
 }
+
+@media screen and (max-width: 768px) {
+  .btn {
+    background: #000000;
+  }
+}

@@ -13,10 +13,10 @@ const Card = (props) => {
   return (
     <LayoutGroup>
       {expanded ? (
-        <ExpandedCard param={props} setExpanded ={(true)} />
-      ) : (
-        <CompactCard param={props} setExpanded={() => setExpanded(true)} />
-      )}
+         <ExpandedCard param={props} setExpanded={() => setExpanded(false)} />
+         ) : (
+           <CompactCard param={props} setExpanded={() => setExpanded(true)} />
+         )}
     </LayoutGroup>
   );
 };
@@ -64,6 +64,7 @@ function ExpandedCard({ param, setExpanded }) {
         color: "#000",
         opacity: 0.55,
       },
+      
       fill: {
         colors: ["#fff"],
         type: "gradient",

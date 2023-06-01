@@ -42,7 +42,7 @@ export const TableX = () => {
     <div className="Table">
       <h3>Productos a vencer</h3>
       <br />
-      <TableContainer component={Paper} className='TableContainer' style={{ boxShadow: '0px 13px 20px 0px #80808029', maxHeight: '400px', overflow: 'auto', background: '#0E0E0E', zIndex: 1, position: 'relative' }}>
+      <TableContainer component={Paper} className='TableContainer' style={{ boxShadow: '0px 13px 20px 0px #80808029', maxHeight: '700px', overflow: 'auto', background: '#0E0E0E', zIndex: 1, position: 'relative' }}>
         <Table stickyHeader sx={{ minWidth: 650, maxWidth: "max-content" }} aria-label="sticky table">
           <TableHead>
             <TableRow>

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import Button  from '@mui/material/Button';
-import Modal  from '@mui/material/Modal';
-import  TextField  from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+import Modal from '@mui/material/Modal';
+import TextField from '@mui/material/TextField';
 
 
 import { Grid, MenuItem, Select } from '@mui/material';
@@ -104,157 +104,159 @@ const CustomerFormModal = (props) => {
     const handleChangePais = (event) => {
         setSelectedCountries(event.target.value);
     };
-    
+
     return (
         <>
-        {cardsclientSet.map((card, id) => {
-                            return (
-                                <div className="parentContainer" key={id}>
-                                    <Card
-                                        title={card.title}
-                                        color={card.color}
-                                        barColor={card.barColor}
-                                        barValue={card.value}
-                                        barText={card.barText}
-                                        value={card.value}
-                                        png={card.png}
-                                        series={card.series}
-                                        onClick={handleOpen} // Pasa la función handleCardClick como prop a Card                             
-                                    />
-                                </div>
-                            );
-                        })}
+            {cardsclientSet.map((card, id) => {
+                return (
+                    <div className="parentContainer" key={id}>
+                        <Card
+                            title={card.title}
+                            color={card.color}
+                            barColor={card.barColor}
+                            barValue={card.value}
+                            barText={card.barText}
+                            value={card.value}
+                            png={card.png}
+                            series={card.series}
+                            onClick={handleOpen} // Pasa la función handleCardClick como prop a Card                             
+                        />
+                    </div>
+                );
+            })}
             <Modal open={open} onClose={handleClose}>
                 <div className={style.modalcontent} >
                     <div className={style.divtitulo}>
                         <h2>Alta de Cliente</h2>
                     </div>
                     <form onSubmit={handleSubmit}>
-                        <Grid container spacing={3}>
-                            <Grid container item xs={12}>
-                                <Grid item xs={2} className={style.textFieldgrid} >
-                                    <TextField
-                                        variant="filled"
-                                        required
-                                        id="outlined-required"
-                                        label="Cedula"
-                                        defaultDefaultValue={clienteCedula}
-                                        onChange={handleCedulaChange}
-                                        className='TextField'
-                                    />
+                        <div className={style.gridContainer}>
+                            <Grid container spacing={3}>
+                                <Grid container item xs={12}>
+                                    <Grid item xs={2} className={style.textFieldgrid} >
+                                        <TextField
+                                            variant="filled"
+                                            required
+                                            id="outlined-required"
+                                            label="Cedula"
+                                            defaultDefaultValue={clienteCedula}
+                                            onChange={handleCedulaChange}
+                                            className='TextField'
+                                        />
+                                    </Grid>
+                                    <Grid item xs={4} className={style.textFieldgrid}>
+                                        <TextField label="Nombre y Apellido"
+                                            variant="filled"
+                                            required
+                                            className='TextField'
+                                            fullWidth={true}
+                                            defaultDefaultValue={clienteNombre}
+                                            onChange={handleNombresChange} />
+                                    </Grid>
+                                    <Grid item xs={6} className={style.textFieldgrid}>
+                                        <TextField label="Dirección"
+                                            variant="filled"
+                                            required className='TextField'
+                                            fullWidth={true}
+                                            defaultvalue={clienteDireccion}
+                                            onChange={handleDireccionChange} />
+                                    </Grid>
                                 </Grid>
-                                <Grid item xs={4} className={style.textFieldgrid}>
-                                    <TextField label="Nombre y Apellido"
-                                        variant="filled"
-                                        required
-                                        className='TextField'
-                                        fullWidth={true}
-                                        defaultDefaultValue={clienteNombre}
-                                        onChange={handleNombresChange} />
+                                <Grid container item xs={12}>
+                                    <Grid item xs={3} className={style.textFieldgrid}>
+                                        <Select
+                                            id="countries-select"
+                                            label="País"
+                                            multiple
+                                            variant="filled"
+                                            value={selectedCountries}
+                                            onChange={handleChangePais}
+                                            renderValue={(selected) => (
+                                                <div>
+                                                    {selected.map((value) => (
+                                                        <div key={value}>{value}</div>
+                                                    ))}
+                                                </div>
+                                            )}
+                                            style={{ width: '100%' }} // Aplica el estilo para ajustar el ancho del Select al 100%
+                                            displayEmpty
+                                        >
+                                            <MenuItem value="">Seleccione un país</MenuItem> {/* Elemento con el texto deseado */}
+                                            {countries.map((country) => (
+                                                <MenuItem key={country.paisId} value={country.paisDescripcion}>
+                                                    {country.paisDescripcion}
+                                                </MenuItem>
+                                            ))}
+                                        </Select>
+                                    </Grid>
+                                    <Grid item xs={3} className={style.textFieldgrid}>
+                                        <TextField label="Ciudad"
+                                            variant="filled"
+                                            required
+                                            className='TextField'
+                                            fullWidth={true}
+                                            defaultvalue={clienteCiudad}
+                                            onChange={handleCiudadChange} />
+                                    </Grid>
+                                    <Grid item xs={3} className={style.textFieldgrid}>
+                                        <TextField label="Barrio"
+                                            variant="filled"
+                                            required
+                                            className='TextField'
+                                            fullWidth={true}
+                                            defaultvalue={clienteBarrio}
+                                            onChange={handleBarrioChange} />
+                                    </Grid>
+                                    <Grid item xs={3} className={style.textFieldgrid}>
+                                        <TextField label="Celular"
+                                            variant="filled"
+                                            required
+                                            className='TextField'
+                                            fullWidth={true}
+                                            defaultvalue={clienteCelular}
+                                            onChange={handleCelularChange} />
+                                    </Grid>
                                 </Grid>
-                                <Grid item xs={6} className={style.textFieldgrid}>
-                                    <TextField label="Dirección"
-                                        variant="filled"
-                                        required className='TextField'
-                                        fullWidth={true}
-                                        defaultvalue={clienteDireccion}
-                                        onChange={handleDireccionChange} />
-                                </Grid>
-                            </Grid>
-                            <Grid container item xs={12}>
-                                <Grid item xs={3} className={style.textFieldgrid}>
-                                    <Select
-                                        id="countries-select"
-                                        label="País"
-                                        multiple
-                                        variant="filled"
-                                        value={selectedCountries}
-                                        onChange={handleChangePais}
-                                        renderValue={(selected) => (
-                                            <div>
-                                                {selected.map((value) => (
-                                                    <div key={value}>{value}</div>
-                                                ))}
-                                            </div>
-                                        )}
-                                        style={{ width: '100%' }} // Aplica el estilo para ajustar el ancho del Select al 100%
-                                        displayEmpty
-                                    >
-                                        <MenuItem value="">Seleccione un país</MenuItem> {/* Elemento con el texto deseado */}
-                                        {countries.map((country) => (
-                                            <MenuItem key={country.paisId} value={country.paisDescripcion}>
-                                                {country.paisDescripcion}
-                                            </MenuItem>
-                                        ))}
-                                    </Select>
-                                </Grid>
-                                <Grid item xs={3} className={style.textFieldgrid}>
-                                    <TextField label="Ciudad"
-                                        variant="filled"
-                                        required
-                                        className='TextField'
-                                        fullWidth={true}
-                                        defaultvalue={clienteCiudad}
-                                        onChange={handleCiudadChange} />
-                                </Grid>
-                                <Grid item xs={3} className={style.textFieldgrid}>
-                                    <TextField label="Barrio"
-                                        variant="filled"
-                                        required
-                                        className='TextField'
-                                        fullWidth={true}
-                                        defaultvalue={clienteBarrio}
-                                        onChange={handleBarrioChange} />
-                                </Grid>
-                                <Grid item xs={3} className={style.textFieldgrid}>
-                                    <TextField label="Celular"
-                                        variant="filled"
-                                        required
-                                        className='TextField'
-                                        fullWidth={true}
-                                        defaultvalue={clienteCelular}
-                                        onChange={handleCelularChange} />
-                                </Grid>
-                            </Grid>
-                            <Grid container item xs={12}>
-                                <Grid item xs={6} className={style.textFieldgrid}>
-                                    <TextField label="Correo"
-                                        variant="filled"
-                                        required
-                                        className='TextField'
-                                        fullWidth={true}
-                                        defaultvalue={clienteCorreo}
-                                        onChange={handleCorreoChange} />
-                                </Grid>
-                                <Grid item xs={3} className={style.textFieldgrid}>
-                                    <TextField label="Estado Civil"
-                                        variant="filled"
-                                        required
-                                        className='TextField'
-                                        fullWidth={true}
-                                        defaultvalue={clienteEstadoCivil}
-                                        onChange={handleEstadocivilChange} />
-                                </Grid>
-                                <Grid item xs={3} className={style.textFieldgrid}>
-                                    <TextField label="Estado"
-                                        variant="filled"
-                                        required className='TextField'
-                                        fullWidth={true}
-                                        defaultvalue={clienteEstado}
-                                        onChange={handleEstadoChange} />
-                                </Grid>
-                            </Grid>
-                        </Grid>
-                        <Grid>
-                            <Grid container item xs={7}>
-                                <Grid item xs={3} className={style.textFieldgrid}>
-                                    <Button type="submit" onClick={handleSubmit} variant="contained" id='btn' className={style.btn}>Guardar</Button>
-                                </Grid>
-                                <Grid item xs={2} className={style.textFieldgrid}>
-                                    <Button type="submit" variant="contained" id='btn'>Cancelar</Button>
+                                <Grid container item xs={12}>
+                                    <Grid item xs={6} className={style.textFieldgrid}>
+                                        <TextField label="Correo"
+                                            variant="filled"
+                                            required
+                                            className='TextField'
+                                            fullWidth={true}
+                                            defaultvalue={clienteCorreo}
+                                            onChange={handleCorreoChange} />
+                                    </Grid>
+                                    <Grid item xs={3} className={style.textFieldgrid}>
+                                        <TextField label="Estado Civil"
+                                            variant="filled"
+                                            required
+                                            className='TextField'
+                                            fullWidth={true}
+                                            defaultvalue={clienteEstadoCivil}
+                                            onChange={handleEstadocivilChange} />
+                                    </Grid>
+                                    <Grid item xs={3} className={style.textFieldgrid}>
+                                        <TextField label="Estado"
+                                            variant="filled"
+                                            required className='TextField'
+                                            fullWidth={true}
+                                            defaultvalue={clienteEstado}
+                                            onChange={handleEstadoChange} />
+                                    </Grid>
                                 </Grid>
                             </Grid>
-                        </Grid>
+                            <Grid>
+                                <Grid container item xs={7}>
+                                    <Grid item xs={3} className={style.textFieldgrid}>
+                                        <Button type="submit" onClick={handleSubmit} variant="contained" id='btn' className={style.btn}>Guardar</Button>
+                                    </Grid>
+                                    <Grid item xs={2} className={style.textFieldgrid}>
+                                        <Button type="submit" variant="contained" id='btn'>Cancelar</Button>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                        </div>
                     </form>
                 </div>
             </Modal>
